@@ -1,0 +1,41 @@
+students:
+  workbook: examples/student_sheet.xlsx
+  sheet: Question Bank
+  info:
+    - col: A
+      key: Student ID
+    - col: B
+      key: name
+  output: data/{info[name]}__{info[Student ID]}.xlsx
+
+questions:
+  workbook: examples/question_sheet.xlsx
+  sheet: Questions
+  question_cols: ABCD
+  question_height: 5
+  difficulty_col: E
+  tags_cols: FGHIJ
+  indexing_col: N
+
+template:
+  workbook: examples/interview_template.xlsx
+  question_sheet: Questions
+  question_locations:
+    - "G2"
+    - "L2"
+    - "B8"
+    - "G8"
+    - "L8"
+  rubric_sheet: Rubric
+  rubric_locations:
+    - "B2"
+    - "B3"
+    - "B4"
+    - "B5"
+    - "B6"
+
+selection_criteria:
+  min_diff: 9
+  max_diff: 11
+  best_diff: 10
+  required_tags: FGHIJ

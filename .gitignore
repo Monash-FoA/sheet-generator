@@ -1,0 +1,7 @@
+venv
+**__pycache__**
+
+# Secret Info
+question_sheets
+student_lists
+configs
