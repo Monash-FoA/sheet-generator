@@ -1,0 +1,9 @@
+animals:
+  - Dog
+  - Cat
+  - Mouse
+code_snippets:
+  - type: file
+    path: examples/code/test1.py
+  - type: file
+    path: examples/code/test2.py
