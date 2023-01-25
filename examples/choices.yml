@@ -7,3 +7,6 @@ code_snippets:
     path: examples/code/test1.py
   - type: file
     path: examples/code/test2.py
+banana:
+  - img:examples/images/b1.jpg
+  - img:examples/images/b2.jpg

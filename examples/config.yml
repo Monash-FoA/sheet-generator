@@ -1,16 +1,18 @@
 students:
   workbook: examples/student_sheet.xlsx
-  sheet: Question Bank
+  sheet: Students
   info:
     - col: A
       key: Student ID
     - col: B
-      key: name
-  output: data/{info[name]}__{info[Student ID]}.xlsx
+      key: Last Name
+    - col: C
+      key: Pref Name
+  output: data/{info[Pref Name]} {info[Last Name]}__{info[Student ID]}.xlsx
 
 questions:
   workbook: examples/question_sheet.xlsx
-  sheet: Questions
+  sheet: QuestionBank
   question_cols: ABCD
   question_height: 5
   difficulty_col: E
@@ -34,11 +36,9 @@ template:
     - "B5"
     - "B6"
 
-dynamic:
+randomisation:
   choices: examples/choices.yml
-
-selection_criteria:
-  min_diff: 9
-  max_diff: 11
-  best_diff: 10
-  required_tags: FGHIJ
+  selection:
+    min_diff: 9
+    max_diff: 11
+    required_tags: FGHI
