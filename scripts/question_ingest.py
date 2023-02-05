@@ -1,4 +1,5 @@
 import openpyxl
+from copy import copy
 
 # Helper functions for merged cells
 # Taken from https://gist.github.com/tchen/01d1d61a985190ff6b71fc14c45f95c9
@@ -48,7 +49,15 @@ def get_question_data(wb, index, question_cols, question_height, difficulty_col,
             key = cell_col + str(i + index)
             cell = wb[key]
             data["question_cells"][key] = {}
-            data["question_cells"][key]["style"] = cell._style if cell.has_style else None
+            if cell.has_style:
+                data["question_cells"][key]["style"] = {
+                    "font": copy(cell.font),
+                    "border": copy(cell.border),
+                    "fill": copy(cell.fill),
+                    "number_format": copy(cell.number_format),
+                    "protection": copy(cell.protection),
+                    "alignment": copy(cell.alignment),
+                }
             data["question_cells"][key]["merged"] = parent_of_merged_cell(cell)[1] if is_merged(cell) else None
             if data["question_cells"][key]["merged"]:
                 continue

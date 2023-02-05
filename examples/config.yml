@@ -21,6 +21,10 @@ questions:
 
 template:
   workbook: examples/interview_template.xlsx
+  computed_cols:
+    - key: "I10"
+      expr: "{info[Pref Name]} {info[Last Name]} - {info[Student ID]}"
+      sheet: rubric
   question_sheet: Questions
   question_locations:
     - "G2"
@@ -42,3 +46,17 @@ randomisation:
     min_diff: 9
     max_diff: 11
     required_tags: FGHI
+
+images:
+  examples/images/excel.png:
+    preffered_width: 150
+    offset_x: 0.3
+    offset_y: -0.3
+  examples/images/b1.jpg:
+    preffered_height: 200
+    offset_x: 0.4
+    offset_y: -0.35
+  examples/images/b2.jpg:
+    preffered_height: 200
+    offset_x: 0.4
+    offset_y: -0.35
