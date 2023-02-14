@@ -6,6 +6,7 @@ from scripts.student_info import retrieve_students
 from scripts.question_ingest import retrieve_questions
 from scripts.random_questions import create_random_questions
 from scripts.create_sheet import create_sheets
+from scripts.sheets_to_pdf import workbooks_to_pdf
 
 logging.basicConfig()
 LOGGER = logging.getLogger(__file__)
@@ -31,6 +32,9 @@ def main():
 
     create_sheets(students, student_sheets, conf["template"], conf.get("images", {}))
     LOGGER.info(f"Generated {len(students)} workbooks.")
+
+    workbooks_to_pdf(students)
+    LOGGER.info(f"Generated {len(students)} PDFs.")
 
 if __name__ == "__main__":
     main()
